@@ -459,11 +459,24 @@
 
 {* teste *}
 			
-				<div class="referencia lateral">
-				<h2 class="label"><hr>
-				<p><h3>Citação ABNT</h3></p>
 
-			
+<button id="toggleButton">Citação ABNT</button>
+					<div id="myDiv" style="display:none;">
+					  <style>
+						#toggleButton {
+						  background-color: grey;
+						  color: black;
+						  padding: 5px 10px;
+						  border: none;
+						  cursor: pointer;
+						}
+					  </style>
+
+
+
+				<div class="referencia lateral">
+				
+						
 				{* referencia livro fisico*}
 				<p>{$author->getLocalizedFamilyName()},
 				{$author->getLocalizedGivenName()}. 
@@ -472,12 +485,25 @@
 				São Paulo, 
 				{$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}. </p>
-				<hr>
+				
 				</div>
 			</div>
 			
 
+<script>
+				  const toggleButton = document.getElementById("toggleButton");
+				  const myDiv = document.getElementById("myDiv");
 
+				  toggleButton.addEventListener("click", function() {
+					if (myDiv.style.display === "none") {
+					  myDiv.style.display = "block";
+					  toggleButton.innerHTML = "Esconder";
+					} else {
+					  myDiv.style.display = "none";
+						toggleButton.innerHTML = "Citação ABNT";
+					}
+					});
+					</script>
 
 
 
