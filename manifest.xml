@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <primary_locale>pt_BR</primary_locale>
+  <plugin
+    id="ompcitation"
+    system="3.3.0-8"
+    package="ompcitation"
+    directory="ompcitation"
+    name="ompcitation"
+    description="ompcitation"
+    version="1.0.0"
+    date="2023-01-25"
+    author="STI FFLCH and ABCD USP"
+    email="sti.fflch@usp.br"
+    url="https://github.com/danielsf93/ompcitation"
+  >
+  </plugin>
+</manifest>
