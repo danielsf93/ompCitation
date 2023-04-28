@@ -523,11 +523,11 @@
 {*teste*}
 			
 
-<button id="toggleButton2">TESTE</button>
-					<div id="myDiv2" style="display:none;">
+<button id="buttonabntb">teste</button>
+					<div id="divAbntb" style="display:none;">
 					  <style>
-						#toggleButton2 {
-						  background-color: rgb(233, 21, 21);
+						#buttonabntb {
+						  background-color: grey;
 						  color: black;
 						  padding: 5px 10px;
 						  border: none;
@@ -537,7 +537,7 @@
 
 
 
-				<div class="referencia lateral dois">
+				<div class="referencia abntb">
 				
 						
 				{* referencia livro fisico*}
@@ -553,28 +553,25 @@
 			</div>
 			
 
-<script>
-				  const toggleButton2 = document.getElementById("toggleButton2");
-				  const myDiv2 = document.getElementById("myDiv2");
+					<script>
+				  const buttonabntb = document.getElementById("buttonabntb");
+				  const divAbntb = document.getElementById("divAbntb");
 
-				  toggleButton2.addEventListener("click", function() {
-					if (myDiv2.style.display === "none") {
-					  myDiv2.style.display = "block";
-					  toggleButton2.innerHTML = "Esconderrr";
+				  buttonabntb.addEventListener("click", function() {
+					if (divAbntb.style.display === "none") {
+						divAbntb.style.display = "block";
+						buttonabntb.innerHTML = "Esconder";
 					} else {
-					  myDiv2.style.display = "none";
-						toggleButton2.innerHTML = "Teste";
+						divAbntb.style.display = "none";
+						buttonabntb.innerHTML = "tEEste";
 					}
 					});
 					</script>
 
-</div>
 
 
 
-
-
-
+			</div>
 
 
 
