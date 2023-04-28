@@ -466,17 +466,17 @@
 			
 			
 			
-			<div class="item citation01">
+			<div class="item citation">
 			
 			<b>COMO CITAR</b><br>
 			
 
 			{* ABNT *}
 
-<button id="toggleButton">Citação ABNT</button>
-					<div id="myDiv" style="display:none;">
+<button id="buttonabnt">Citação ABNT</button>
+					<div id="divAbnt" style="display:none;">
 					  <style>
-						#toggleButton {
+						#buttonabnt {
 						  background-color: grey;
 						  color: black;
 						  padding: 5px 10px;
@@ -487,7 +487,7 @@
 
 
 
-				<div class="referencia lateral">
+				<div class="referencia abnt">
 				
 						
 				{* referencia livro fisico*}
@@ -503,24 +503,24 @@
 			</div>
 			
 
-<script>
-				  const toggleButton = document.getElementById("toggleButton");
-				  const myDiv = document.getElementById("myDiv");
+					<script>
+				  const buttonabnt = document.getElementById("buttonabnt");
+				  const divAbnt = document.getElementById("divAbnt");
 
-				  toggleButton.addEventListener("click", function() {
-					if (myDiv.style.display === "none") {
-					  myDiv.style.display = "block";
-					  toggleButton.innerHTML = "Esconder";
+				  buttonabnt.addEventListener("click", function() {
+					if (divAbnt.style.display === "none") {
+						divAbnt.style.display = "block";
+						buttonabnt.innerHTML = "Esconder";
 					} else {
-					  myDiv.style.display = "none";
-						toggleButton.innerHTML = "Citação ABNT";
+						divAbnt.style.display = "none";
+						buttonabnt.innerHTML = "Citação ABNT";
 					}
 					});
 					</script>
 
 
 			
-
+{*teste*}
 			
 
 <button id="toggleButton2">TESTE</button>
