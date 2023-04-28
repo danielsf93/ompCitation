@@ -1,38 +1,103 @@
-ABNT
-1) SOBRENOME, Nome Abreviado. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, data de publicação da obra.
+-ABNT
+
+    SOBRENOME, Nome Abreviado. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, data de publicação da obra.
+    Exemplo: PEREIRA, M. L. M. C. Geoprocessamento com software livre. São Paulo: Oficina de Textos, 2009.
+
+    SOBRENOME, Nome Abreviado; SOBRENOME, Nome Abreviado. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, data de publicação da obra.
+    Exemplo: SILVA, A. L.; SOUZA, J. C. Desenvolvimento web com PHP e MySQL. São Paulo: Novatec, 2012.
+
+    SOBRENOME, Nome Abreviado et al. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, data de publicação da obra.
+    Exemplo: TAVARES, A. M. et al. Cálculo vetorial e geometria analítica: exercícios resolvidos e propostos. Rio de Janeiro: LTC, 2012.
+
+-ACM
+
+    SOBRENOME, N. A. Título da obra. Local de publicação: Editora, Ano de publicação.
+    Exemplo: STALLINGS, W. Data and computer communications. Upper Saddle River, NJ: Prentice Hall, 2013.
+
+    SOBRENOME, N. A.; SOBRENOME, N. A. Título da obra. Local de publicação: Editora, Ano de publicação.
+    Exemplo: MANNING, C. D.; SCHÜTZE, H. Foundations of statistical natural language processing. Cambridge, MA: MIT Press, 1999.
+
+    SOBRENOME, N. A. et al. Título da obra. Local de publicação: Editora, Ano de publicação.
+    Exemplo: REDDY, S. M. et al. Computer organization and design: the hardware/software interface. Amsterdam: Elsevier/Morgan Kaufmann Publishers, 2012.
+
+-ACS
+
+    SOBRENOME, N. A.; SOBRENOME, N. A. Título da obra; Editora: Local de publicação, Ano de publicação.
+    Exemplo: BRUICE, P. Y. Organic chemistry; Pearson: San Francisco, 2014.
+
+    SOBRENOME, N. A.; SOBRENOME, N. A. Título da obra; Editora: Local de publicação, Ano de publicação.
+    Exemplo: BROWN, T. L.; LEMAY, H. E.; BURSTEN, B. E. Chemistry: the central science; Pearson: Boston, 2017.
+
+    SOBRENOME, N. A.; SOBRENOME, N. A.; SOBRENOME, N. A. Título da obra; Editora: Local de publicação, Ano de publicação.
+    Exemplo: ATKINS, P. W.; JONES, L.; LAVENDELLE, C. Chemistry: molecules, matter, and change; W. H. Freeman and Company: New York, 2016.
+
+-APA
+
+    SOBRENOME, N. A. (Ano de publicação). Título: subtítulo (se houver). Local de publicação: Editora.
+Exemplo: GREENSPAN, S. I. (2008). Engenharia de software: uma abordagem profissional. Porto Alegre: AMGH.
+
+    SOBRENOME, N. A., & SOBRENOME, N. A. (Ano de publicação). Título: subtítulo (se houver). Local de publicação: Editora.
+    Exemplo: JOHNSON, R. T., & MILLER, N. L. (2014). Álgebra linear aplicada. Rio de Janeiro: LTC.
+
+    SOBRENOME, N. A., SOBRENOME, N. A., & SOBRENOME, N. A. (Ano de publicação). Título: subtítulo (se houver). Local de publicação: Editora.
+    Exemplo: GORDON, L. A., LOEB, M. P., & SOHL, J. E. (2015). Information security management: a practitioner's guide. Boca Raton, FL: CRC Press.
+
+-Chicago
+
+    SOBRENOME, Nome. Ano. Título: subtítulo. Local: Editora.
+    PRESSMAN, R. S. 2010. Software engineering: a practitioner's approach. New York: McGraw-Hill.
 
 
-ACM
+   SOBRENOME, Nome do primeiro autor, e Nome do segundo autor. Ano de publicação. Título do livro em itálico: subtítulo em itálico. Local de publicação: Editora.
+   Smith, John, e Jane Brown. 2005. Como escrever um bom livro. Nova York: Editora ABC.
 
-ACS
+   SOBRENOME DO PRIMEIRO AUTOR, Nome do primeiro autor, SOBRENOME DO SEGUNDO AUTOR, Nome do segundo autor, e SOBRENOME DO TERCEIRO AUTOR, Nome do terceiro autor. Ano de publicação. Título: subtítulo. Local de publicação: Editora.
+   GORDON, Laura A., LOEB, Martin P., e SOHL, Jeffrey E. 2015. Information security management: a practitioner's guide. Boca Raton, FL: CRC Press.
 
-APA
+-Harvard
 
-Chicago
-1) Sobrenome, Nome. Ano. Título: subtítulo. Local: Editora.
+    SOBRENOME, Iniciais. (Ano de publicação). Título. Local de publicação: Editora.
+    Exemplo: PRESSMAN, R. S. (2010). Software engineering: a practitioner's approach. New York: McGraw-Hill.
 
-2)Sobrenome, Nome Primeiro Autor, Nome e Sobrenome Segundo Autor, Nome e
-Sobrenome Terceiro Autor. Ano. Título: subtítulo. Local: Editora, ano de publicação
+    SOBRENOME, Iniciais; SOBRENOME, Iniciais. (Ano de publicação). Título. Local de publicação: Editora.
+    Exemplo: JOHNSON, R. T.; MILLER, N. L. (2014). Álgebra linear aplicada. Rio de Janeiro: LTC.
 
-Harvard
-1) Sobrenome, iniciais (ano de publicação) Título Edição Editora Local de publicação.
-Abbott, A. (1988), System of Professions: An Essay on the Division of Expert Labor , University of Chicago Press, Chicago, IL.
+    SOBRENOME, Iniciais; SOBRENOME, Iniciais; SOBRENOME, Iniciais. (Ano de publicação). Título. Local de publicação: Editora.
+    Exemplo: GORDON, L. A.; LOEB, M. P.; SOHL, J. E. (2015). Information security management: a practitioner's guide. Boca Raton, FL: CRC Press.
 
+-IEEE
 
-
-
-IEEE
-
-MLA
-
-
-Turabian
+    SOBRENOME, N. A. Título da obra. Local de publicação: Editora, Ano de publicação.
+    Exemplo: STALLINGS, W. Data and computer communications. Upper Saddle River, NJ: Prentice Hall, 2000.
 
 
-Santos, Mílton. Metrópole corporativa fragmentada: O caso de São Paulo. São Paulo, SP: Secretaria de Estado da Cultura, 1990.
+    SOBRENOME, N. A. and SOBRENOME, N. A., Título da obra. Local de publicação: Editora, Ano de publicação.
+    Exemplo: TANENBAUM, A. S. and WETHERALL, D. J. Computer networks. Boston: Pearson, 2011.
 
-Vancouver
+    SOBRENOME, N. A., SOBRENOME, N. A., and SOBRENOME, N. A., Título da obra. Local de publicação: Editora, Ano de publicação.
+    Exemplo: HAYKIN, S., MOHER, M., and KASHPOR, B. Radar principles. New York: Wiley, 2012.
 
+-MLA
+
+    SOBRENOME, Nome. Título: subtítulo. Editora, Ano de publicação.
+    Exemplo: PRESSMAN, Roger S. Software Engineering: A Practitioner's Approach. McGraw-Hill, 2010.
+
+    SOBRENOME, Nome e SOBRENOME, Nome. Título: subtítulo. Editora, Ano de publicação.
+    Exemplo: JOHNSON, Richard T., e Miller, Nathan L. Álgebra Linear Aplicada. LTC, 2014.
+
+    SOBRENOME, Nome, et al. Título: subtítulo. Editora, Ano de publicação.
+    Exemplo: GORDON, Lawrence A., et al. Information Security Management: A Practitioner's Guide. CRC Press, 2015.
+
+-Turabian
+
+    SOBRENOME, Nome. Título: subtítulo. Local de publicação: Editora, Ano de publicação.
+    Exemplo: PRESSMAN, Roger S. Software Engineering: A Practitioner's Approach. New York: McGraw-Hill, 2010.
+
+    SOBRENOME, Nome Primeiro Autor, e Nome e Sobrenome Segundo Autor. Título: subtítulo. Local de publicação: Editora, Ano de publicação.
+    Exemplo: JOHNSON, Richard T., e Nathan L. Miller. Álgebra Linear Aplicada. Rio de Janeiro: LTC, 2014.
+
+    SOBRENOME, Nome Primeiro Autor, et al. Título: subtítulo. Local de publicação: Editora, Ano de publicação.
+    Exemplo: GORDON, Lawrence A., et al. Information Security Management: A Practitioner's Guide. Boca Raton, FL: CRC Press, 2015.
 
 
 
