@@ -1,0 +1,41 @@
+ABNT
+1) SOBRENOME, Nome Abreviado. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, data de publicação da obra.
+
+
+ACM
+
+ACS
+
+APA
+
+Chicago
+1) Sobrenome, Nome. Ano. Título: subtítulo. Local: Editora.
+
+2)Sobrenome, Nome Primeiro Autor, Nome e Sobrenome Segundo Autor, Nome e
+Sobrenome Terceiro Autor. Ano. Título: subtítulo. Local: Editora, ano de publicação
+
+Harvard
+1) Sobrenome, iniciais (ano de publicação) Título Edição Editora Local de publicação.
+Abbott, A. (1988), System of Professions: An Essay on the Division of Expert Labor , University of Chicago Press, Chicago, IL.
+
+
+
+
+IEEE
+
+MLA
+
+
+Turabian
+
+
+Santos, Mílton. Metrópole corporativa fragmentada: O caso de São Paulo. São Paulo, SP: Secretaria de Estado da Cultura, 1990.
+
+Vancouver
+
+
+
+
+
+https://ensaiosenotas.com/2016/02/07/formate-e-gerencie-suas-citacoes-e-referencias/
+

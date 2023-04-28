@@ -473,11 +473,11 @@
 
 			{* ABNT *}
 
-<button id="buttonabnt">Citação ABNT</button>
+<button id="buttonabnt">ABNT</button>
 					<div id="divAbnt" style="display:none;">
 					  <style>
 						#buttonabnt {
-						  background-color: grey;
+						  background-color: rgb(37, 230, 11);
 						  color: black;
 						  padding: 5px 10px;
 						  border: none;
@@ -495,7 +495,7 @@
 				{$author->getLocalizedGivenName()}. 
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
 				{$publication->getData('seriesPosition')},
-				São Paulo, 
+				CIDADE, 
 				{$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}. </p>
 				
@@ -513,20 +513,19 @@
 						buttonabnt.innerHTML = "Esconder";
 					} else {
 						divAbnt.style.display = "none";
-						buttonabnt.innerHTML = "Citação ABNT";
+						buttonabnt.innerHTML = "ABNT";
 					}
 					});
 					</script>
 
 
 			
-{*teste*}
-			
+{* harvard *}
 
-<button id="buttonabntb">teste</button>
-					<div id="divAbntb" style="display:none;">
+<button id="buttonharvard">Harvard</button>
+					<div id="divharvard" style="display:none;">
 					  <style>
-						#buttonabntb {
+						#buttonharvard {
 						  background-color: grey;
 						  color: black;
 						  padding: 5px 10px;
@@ -537,37 +536,93 @@
 
 
 
-				<div class="referencia abntb">
+				<div class="referencia harvard">
 				
 						
 				{* referencia livro fisico*}
 				<p>{$author->getLocalizedFamilyName()},
-				{$author->getLocalizedGivenName()}. 
-				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
-				{$publication->getData('seriesPosition')},
-				São Paulo, 
-				{$publication->getLocalizedData('copyrightHolder')}, 
-				{$publication->getData('copyrightYear')}. </p>
+				 {$author->getLocalizedGivenName()}.
+				  ({$publication->getData('copyrightYear')}),
+				   {$publication->getLocalizedFullTitle()|escape},
+				    {$publication->getLocalizedData('copyrightHolder')},
+				     CIDADE, ESTADO.
+				
+				</p>
+
+
+				
 				
 				</div>
 			</div>
 			
 
 					<script>
-				  const buttonabntb = document.getElementById("buttonabntb");
-				  const divAbntb = document.getElementById("divAbntb");
+				  const buttonharvard = document.getElementById("buttonharvard");
+				  const divharvard = document.getElementById("divharvard");
 
-				  buttonabntb.addEventListener("click", function() {
-					if (divAbntb.style.display === "none") {
-						divAbntb.style.display = "block";
-						buttonabntb.innerHTML = "Esconder";
+				  buttonharvard.addEventListener("click", function() {
+					if (divharvard.style.display === "none") {
+						divharvard.style.display = "block";
+						buttonharvard.innerHTML = "Esconder";
 					} else {
-						divAbntb.style.display = "none";
-						buttonabntb.innerHTML = "tEEste";
+						divharvard.style.display = "none";
+						buttonharvard.innerHTML = "Harvard";
 					}
 					});
 					</script>
 
+
+
+{* chicago *}
+
+<button id="buttonchicago">Chicago</button>
+					<div id="divchicago" style="display:none;">
+					  <style>
+						#buttonchicago {
+						  background-color: rgb(238, 241, 32);
+						  color: black;
+						  padding: 5px 10px;
+						  border: none;
+						  cursor: pointer;
+						}
+					  </style>
+
+
+
+				<div class="referencia chicago">
+				
+						
+				{* referencia livro fisico*}
+				<p>{$author->getLocalizedFamilyName()},
+				 {$author->getLocalizedGivenName()}.
+				  ({$publication->getData('copyrightYear')}),
+				   {$publication->getLocalizedFullTitle()|escape}.
+				    LOCAL:
+				    {$publication->getLocalizedData('copyrightHolder')}.
+							
+				</p>
+
+
+				
+				
+				</div>
+			</div>
+			
+
+					<script>
+				  const buttonchicago = document.getElementById("buttonchicago");
+				  const divchicago = document.getElementById("divchicago");
+
+				  buttonchicago.addEventListener("click", function() {
+					if (divchicago.style.display === "none") {
+						divchicago.style.display = "block";
+						buttonchicago.innerHTML = "Esconder";
+					} else {
+						divchicago.style.display = "none";
+						buttonchicago.innerHTML = "Chicago";
+					}
+					});
+					</script>
 
 
 
