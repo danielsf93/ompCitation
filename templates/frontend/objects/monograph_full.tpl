@@ -479,7 +479,7 @@
 						#buttonabnt {
 						  background-color: rgb(37, 230, 11);
 						  color: black;
-						  padding: 5px 10px;
+						  padding: 5px 100px;
 						  border: none;
 						  cursor: pointer;
 						}
@@ -488,18 +488,22 @@
 
 
 				<div class="referencia abnt">
-				
-						
-				{* referencia livro fisico*}
-				<p>{$author->getLocalizedFamilyName()},
-				{$author->getLocalizedGivenName()}. 
-				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
-				{$publication->getData('seriesPosition')},
-				CIDADE, 
-				{$publication->getLocalizedData('copyrightHolder')}, 
-				{$publication->getData('copyrightYear')}. </p>
-				
-				</div>
+    {* SOBRENOME *}
+    <p>{$author->getLocalizedFamilyName()},
+    {* Nome Abreviado *}
+    {$author->getLocalizedGivenName()|substr:0:1}.
+    {* Título: subtítulo *}
+    <b>{$publication->getLocalizedFullTitle()|escape}</b>
+    {* Edição *}
+    {if $publication->getData('seriesPosition')}{$publication->getData('seriesPosition')} ed.{/if},
+    {* Local de publicação: *}
+    {$publication->getLocalizedData('city')}: 
+    {* Editora *}
+    {$publication->getLocalizedData('publisher')}, 
+    {* data de publicação da obra *}
+    {$publication->getData('copyrightYear')}, 
+    </p>
+</div>
 			</div>
 			
 
@@ -528,7 +532,7 @@
 						#buttonharvard {
 						  background-color: grey;
 						  color: black;
-						  padding: 5px 10px;
+						  padding: 5px 100px;
 						  border: none;
 						  cursor: pointer;
 						}
@@ -581,7 +585,7 @@
 						#buttonchicago {
 						  background-color: rgb(238, 241, 32);
 						  color: black;
-						  padding: 5px 10px;
+						  padding: 5px 100px;
 						  border: none;
 						  cursor: pointer;
 						}
