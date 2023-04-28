@@ -455,10 +455,23 @@
 				</div>
 			{/if}
 
-
-
-{* teste *}
 			
+		{****************************
+		
+		CITAÇÂO"!!!!!!!!!!!!!!!!!
+		
+		********************************}	
+			
+			
+			
+			
+			
+			<div class="item citation01">
+			
+			<b>COMO CITAR</b><br>
+			
+
+			{* ABNT *}
 
 <button id="toggleButton">Citação ABNT</button>
 					<div id="myDiv" style="display:none;">
@@ -504,6 +517,77 @@
 					}
 					});
 					</script>
+
+
+			
+
+			
+
+<button id="toggleButton2">TESTE</button>
+					<div id="myDiv2" style="display:none;">
+					  <style>
+						#toggleButton2 {
+						  background-color: rgb(233, 21, 21);
+						  color: black;
+						  padding: 5px 10px;
+						  border: none;
+						  cursor: pointer;
+						}
+					  </style>
+
+
+
+				<div class="referencia lateral dois">
+				
+						
+				{* referencia livro fisico*}
+				<p>{$author->getLocalizedFamilyName()},
+				{$author->getLocalizedGivenName()}. 
+				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
+				{$publication->getData('seriesPosition')},
+				São Paulo, 
+				{$publication->getLocalizedData('copyrightHolder')}, 
+				{$publication->getData('copyrightYear')}. </p>
+				
+				</div>
+			</div>
+			
+
+<script>
+				  const toggleButton2 = document.getElementById("toggleButton2");
+				  const myDiv2 = document.getElementById("myDiv2");
+
+				  toggleButton2.addEventListener("click", function() {
+					if (myDiv2.style.display === "none") {
+					  myDiv2.style.display = "block";
+					  toggleButton2.innerHTML = "Esconderrr";
+					} else {
+					  myDiv2.style.display = "none";
+						toggleButton2.innerHTML = "Teste";
+					}
+					});
+					</script>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
