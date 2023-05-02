@@ -252,61 +252,33 @@
 			
 			<div class="referencia">
 				<hr>
-				<p><h3>Teste de citação ABNT</h3></p>
+				<p><h3>Testes</h3></p>
 
-				Guará,L. Técnica, Espaço, Tempo .  Edição 23-a. S.l. Universidade de São Paulo. Faculdade de Filosofia, Ciências e Letras de Ribeirão Preto, 2012. Disponível em: <https://www.teses.usp.br/teses/disponiveis/2/2138/tde-16112022-115747/>. Acesso em: 2023-05-02 link doi.
+<hr>
 
-
-				{* referencia livro fisico*}
+-ISO
+ E-books:
+APELIDO, Nomes. Título. [Tipo de suporte]. Edição. Local : Editor, ano. Data de
+atualização. [Data de consulta]. Disponibilidade: URL. ISBN
 				<p>{$author->getLocalizedFamilyName()},
 				{$author->getLocalizedGivenName()|substr:0:1}. 
-				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
+				<b>{$publication->getLocalizedFullTitle()|escape}</b>
 				{$publication->getData('seriesPosition')}.
-				S.l: 
-				{$publication->getLocalizedData('copyrightHolder')}, 
+				S.l: {$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}.
-				Disponível em <a href="link">link</a>,
-				acesso em DATA, 
-				DOI: <a href="{$doiUrl}">{$doiUrl} </a> </p><br><hr>
+				Disponibilidade Url . ISBN
 
-				teste com mais de um autor:<br>
-				{* SOBRENOME *}
-<p>
-{if $authors|count > 1}
-  {if $authors|count > 2}
-    {$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.,
-    {$authors[1]->getLocalizedGivenName()|substr:0:1}. {$authors[1]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, e
-    {$authors[2]->getLocalizedGivenName()|substr:0:1}. {$authors[2]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'},
-  {else}
-    {$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
-    {$authors[1]->getLocalizedGivenName()|substr:0:1}. {$authors[1]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'},
-  {/if}
-{else}
-  {$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
-{/if}
-
-{* Título: subtítulo *}
-<b>{$publication->getLocalizedFullTitle()|escape}</b>
-
-{* Edição *}
-{if $publication->getData('seriesPosition')}{$publication->getData('seriesPosition')} ed.{/if},
-
-{* Local de publicação: *}
-{$publication->getLocalizedData('city')}: 
-
-{* Editora *}
-{$publication->getLocalizedData('publisher')}, 
-
-{* data de publicação da obra *}
-{$publication->getData('copyrightYear')},
-
-{* Tipo de suporte *}
-<i>E-book.</i>
-</p>
 
 
 				
-				<hr>
+				</p>
+
+
+
+
+
+
+<hr>
 			</div>
 
 
@@ -576,7 +548,12 @@
 
 
 		<div class="referencia apa">
-		<p>APA </p>
+		<p>{$author->getLocalizedFamilyName()},
+				{$author->getLocalizedGivenName()|substr:0:1}. 
+				{$publication->getData('copyrightYear')}.
+				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
+				 S.l: {$publication->getLocalizedData('copyrightHolder')}. Recuperado em
+				</p>
 </div>
 	</div>
 	
@@ -613,7 +590,19 @@
 
 
 <div class="referencia iso">
-<p>iso </p>
+<p>{$author->getLocalizedFamilyName()},
+				{$author->getLocalizedGivenName()|substr:0:1}. 
+				<b>{$publication->getLocalizedFullTitle()|escape}</b>
+				{$publication->getData('seriesPosition')}.
+				S.l: {$publication->getLocalizedData('copyrightHolder')}, 
+				{$publication->getData('copyrightYear')}.
+				Disponibilidade Url . ISBN
+
+
+
+				
+				</p>
+
 </div>
 </div>
 
