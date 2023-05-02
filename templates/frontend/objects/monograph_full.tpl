@@ -254,17 +254,57 @@
 				<hr>
 				<p><h3>Teste de citação ABNT</h3></p>
 
-				SOBRENOME, Nome Abreviado. Título: subtítulo (se houver). Edição (se houver). Local de publicação: Editora, data de publicação da obra.<br>
+				Guará,L. Técnica, Espaço, Tempo .  Edição 23-a. S.l. Universidade de São Paulo. Faculdade de Filosofia, Ciências e Letras de Ribeirão Preto, 2012. Disponível em: <https://www.teses.usp.br/teses/disponiveis/2/2138/tde-16112022-115747/>. Acesso em: 2023-05-02 link doi.
 
 
 				{* referencia livro fisico*}
 				<p>{$author->getLocalizedFamilyName()},
-				{$author->getLocalizedGivenName()}. 
+				{$author->getLocalizedGivenName()|substr:0:1}. 
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
-				{$publication->getData('seriesPosition')},
-				São Paulo, 
+				{$publication->getData('seriesPosition')}.
+				S.l: 
 				{$publication->getLocalizedData('copyrightHolder')}, 
-				{$publication->getData('copyrightYear')}. </p>
+				{$publication->getData('copyrightYear')}.
+				Disponível em <a href="link">link</a>,
+				acesso em DATA, 
+				DOI: <a href="{$doiUrl}">{$doiUrl} </a> </p><br><hr>
+
+				teste com mais de um autor:<br>
+				{* SOBRENOME *}
+<p>
+{if $authors|count > 1}
+  {if $authors|count > 2}
+    {$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.,
+    {$authors[1]->getLocalizedGivenName()|substr:0:1}. {$authors[1]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, e
+    {$authors[2]->getLocalizedGivenName()|substr:0:1}. {$authors[2]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'},
+  {else}
+    {$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+    {$authors[1]->getLocalizedGivenName()|substr:0:1}. {$authors[1]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'},
+  {/if}
+{else}
+  {$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+{/if}
+
+{* Título: subtítulo *}
+<b>{$publication->getLocalizedFullTitle()|escape}</b>
+
+{* Edição *}
+{if $publication->getData('seriesPosition')}{$publication->getData('seriesPosition')} ed.{/if},
+
+{* Local de publicação: *}
+{$publication->getLocalizedData('city')}: 
+
+{* Editora *}
+{$publication->getLocalizedData('publisher')}, 
+
+{* data de publicação da obra *}
+{$publication->getData('copyrightYear')},
+
+{* Tipo de suporte *}
+<i>E-book.</i>
+</p>
+
+
 				
 				<hr>
 			</div>
@@ -488,21 +528,16 @@
 
 
 				<div class="referencia abnt">
-    {* SOBRENOME *}
-    <p>{$author->getLocalizedFamilyName()},
-    {* Nome Abreviado *}
-    {$author->getLocalizedGivenName()|substr:0:1}.
-    {* Título: subtítulo *}
-    <b>{$publication->getLocalizedFullTitle()|escape}</b>
-    {* Edição *}
-    {if $publication->getData('seriesPosition')}{$publication->getData('seriesPosition')} ed.{/if},
-    {* Local de publicação: *}
-    {$publication->getLocalizedData('city')}: 
-    {* Editora *}
-    {$publication->getLocalizedData('publisher')}, 
-    {* data de publicação da obra *}
-    {$publication->getData('copyrightYear')}, 
-    </p>
+				<p>{$author->getLocalizedFamilyName()},
+				{$author->getLocalizedGivenName()|substr:0:1}. 
+				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
+				{$publication->getData('seriesPosition')}.
+				S.l: 
+				{$publication->getLocalizedData('copyrightHolder')}, 
+				{$publication->getData('copyrightYear')}.
+				Disponível em <a href="link">link</a>,
+				acesso em DATA, 
+				DOI: <a href="{$doiUrl}">{$doiUrl} </a> </p>
 </div>
 			</div>
 			
@@ -514,7 +549,7 @@
 				  buttonabnt.addEventListener("click", function() {
 					if (divAbnt.style.display === "none") {
 						divAbnt.style.display = "block";
-						buttonabnt.innerHTML = "Esconder";
+						buttonabnt.innerHTML = "ABNT";
 					} else {
 						divAbnt.style.display = "none";
 						buttonabnt.innerHTML = "ABNT";
@@ -524,113 +559,120 @@
 
 
 			
-{* harvard *}
+			{* APA *}
 
-<button id="buttonharvard">Harvard</button>
-					<div id="divharvard" style="display:none;">
-					  <style>
-						#buttonharvard {
-						  background-color: grey;
-						  color: black;
-						  padding: 5px 100px;
-						  border: none;
-						  cursor: pointer;
-						}
-					  </style>
-
-
-
-				<div class="referencia harvard">
-				
-						
-				{* referencia livro fisico*}
-				<p>{$author->getLocalizedFamilyName()},
-				 {$author->getLocalizedGivenName()}.
-				  ({$publication->getData('copyrightYear')}),
-				   {$publication->getLocalizedFullTitle()|escape},
-				    {$publication->getLocalizedData('copyrightHolder')},
-				     CIDADE, ESTADO.
-				
-				</p>
+			<button id="buttonapa">APA</button>
+			<div id="divapa" style="display:none;">
+			  <style>
+				#buttonapa {
+				  background-color: rgb(15, 11, 230);
+				  color: black;
+				  padding: 5px 100px;
+				  border: none;
+				  cursor: pointer;
+				}
+			  </style>
 
 
-				
-				
-				</div>
-			</div>
+
+		<div class="referencia apa">
+		<p>APA </p>
+</div>
+	</div>
+	
+
+			<script>
+		  const buttonapa = document.getElementById("buttonapa");
+		  const divapa = document.getElementById("divapa");
+
+		  buttonapa.addEventListener("click", function() {
+			if (divapa.style.display === "none") {
+				divapa.style.display = "block";
+				buttonapa.innerHTML = "APA";
+			} else {
+				divapa.style.display = "none";
+				buttonapa.innerHTML = "APA";
+			}
+			});
+			</script>
+
+{* ISO *}
+
+<button id="buttoniso">ISO</button>
+<div id="diviso" style="display:none;">
+  <style>
+	#buttoniso {
+	  background-color: rgb(230, 11, 183);
+	  color: black;
+	  padding: 5px 100px;
+	  border: none;
+	  cursor: pointer;
+	}
+  </style>
+
+
+
+<div class="referencia iso">
+<p>iso </p>
+</div>
+</div>
+
+
+<script>
+const buttoniso = document.getElementById("buttoniso");
+const diviso = document.getElementById("diviso");
+
+buttoniso.addEventListener("click", function() {
+if (diviso.style.display === "none") {
+	diviso.style.display = "block";
+	buttoniso.innerHTML = "ISO";
+} else {
+	diviso.style.display = "none";
+	buttoniso.innerHTML = "ISO";
+}
+});
+</script>
+
+
+
+{* VANCOUVER *}
+
+<button id="buttonvancouver">Vancouver</button>
+<div id="divvancouver" style="display:none;">
+  <style>
+	#buttonvancouver {
+	  background-color: rgb(230, 11, 11);
+	  color: black;
+	  padding: 5px 50px;
+	  border: none;
+	  cursor: pointer;
+	}
+  </style>
+
+
+
+<div class="referencia vancouver">
+<p>vancouver </p>
+</div>
+</div>
+
+
+<script>
+const buttonvancouver = document.getElementById("buttonvancouver");
+const divvancouver = document.getElementById("divvancouver");
+
+buttonvancouver.addEventListener("click", function() {
+if (divvancouver.style.display === "none") {
+	divvancouver.style.display = "block";
+	buttonvancouver.innerHTML = "Vancouver";
+} else {
+	divvancouver.style.display = "none";
+	buttonvancouver.innerHTML = "Vancouver";
+}
+});
+</script>
 			
 
-					<script>
-				  const buttonharvard = document.getElementById("buttonharvard");
-				  const divharvard = document.getElementById("divharvard");
-
-				  buttonharvard.addEventListener("click", function() {
-					if (divharvard.style.display === "none") {
-						divharvard.style.display = "block";
-						buttonharvard.innerHTML = "Esconder";
-					} else {
-						divharvard.style.display = "none";
-						buttonharvard.innerHTML = "Harvard";
-					}
-					});
-					</script>
-
-
-
-{* chicago *}
-
-<button id="buttonchicago">Chicago</button>
-					<div id="divchicago" style="display:none;">
-					  <style>
-						#buttonchicago {
-						  background-color: rgb(238, 241, 32);
-						  color: black;
-						  padding: 5px 100px;
-						  border: none;
-						  cursor: pointer;
-						}
-					  </style>
-
-
-
-				<div class="referencia chicago">
-				
-						
-				{* referencia livro fisico*}
-				<p>{$author->getLocalizedFamilyName()},
-				 {$author->getLocalizedGivenName()}.
-				  ({$publication->getData('copyrightYear')}),
-				   {$publication->getLocalizedFullTitle()|escape}.
-				    LOCAL:
-				    {$publication->getLocalizedData('copyrightHolder')}.
-							
-				</p>
-
-
-				
-				
-				</div>
-			</div>
-			
-
-					<script>
-				  const buttonchicago = document.getElementById("buttonchicago");
-				  const divchicago = document.getElementById("divchicago");
-
-				  buttonchicago.addEventListener("click", function() {
-					if (divchicago.style.display === "none") {
-						divchicago.style.display = "block";
-						buttonchicago.innerHTML = "Esconder";
-					} else {
-						divchicago.style.display = "none";
-						buttonchicago.innerHTML = "Chicago";
-					}
-					});
-					</script>
-
-
-
-			</div>
 
 
 
@@ -640,13 +682,7 @@
 
 
 
-
-
-
-
-
-
-
+</div>
 			{* Copyright statement *}
 			{if $publication->getData('copyrightYear') && $publication->getLocalizedData('copyrightHolder')}
 				<div class="item copyright">
