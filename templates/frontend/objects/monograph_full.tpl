@@ -19,17 +19,6 @@
 	</h1>
 
 	
-{*
-	<i class='fa fa-bar-chart' style='color: red'></i> </span> <b>Visualizações: {$monograph->getViews()} </b><br>
-	<p>Quantidade de acessos: {$currentPress->getViews()} </p><br>
-        
-<br>
-
-{assign var=galleys value=$article->getGalleys()}
-	<i class='fa fa-bar-chart' style='color: red'></i> </span> <b>Visualizações: {$article->getViews()}</b>
-<br> *}
-
-
 	<div class="row">
 		<div class="main_entry">
 
@@ -248,41 +237,6 @@
 				</div>
 			{/if}
 			
-			
-			
-			<div class="referencia">
-				<hr>
-				<p><h3>Testes</h3></p>
-
-<hr>
-
--ISO
- E-books:
-APELIDO, Nomes. Título. [Tipo de suporte]. Edição. Local : Editor, ano. Data de
-atualização. [Data de consulta]. Disponibilidade: URL. ISBN
-				<p>{$author->getLocalizedFamilyName()},
-				{$author->getLocalizedGivenName()|substr:0:1}. 
-				<b>{$publication->getLocalizedFullTitle()|escape}</b>
-				{$publication->getData('seriesPosition')}.
-				S.l: {$publication->getLocalizedData('copyrightHolder')}, 
-				{$publication->getData('copyrightYear')}.
-				Disponibilidade Url . ISBN
-
-
-
-				
-				</p>
-
-
-
-
-
-
-<hr>
-			</div>
-
-
-
 			{* References *}
 			{if $citations || $publication->getData('citationsRaw')}
 				<div class="item references">
@@ -485,40 +439,40 @@ atualização. [Data de consulta]. Disponibilidade: URL. ISBN
 
 			{* ABNT *}
 
-<button id="buttonabnt">ABNT</button>
-					<div id="divAbnt" style="display:none;">
-					  <style>
+			<div class="sub_item abnt">
+			<button id="buttonabnt">ABNT</button>
+				<div id="divAbnt" style="display:none;">
+					<style>
 						#buttonabnt {
-						  background-color: rgb(37, 230, 11);
-						  color: black;
-						  padding: 5px 100px;
-						  border: none;
-						  cursor: pointer;
+						font-size: 18px;
+						font-weight: 100;
+						background-color: aqua;
+						border-radius: 15px;
+						border: 0;
+						padding: 5px 60px;
+						cursor: pointer;
 						}
-					  </style>
-
-
-
-				<div class="referencia abnt">
-				<p>{$author->getLocalizedFamilyName()},
-				{$author->getLocalizedGivenName()|substr:0:1}. 
-				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
-				{$publication->getData('seriesPosition')}.
-				S.l: 
-				{$publication->getLocalizedData('copyrightHolder')}, 
-				{$publication->getData('copyrightYear')}.
-				Disponível em <a href="link">link</a>,
-				acesso em DATA, 
-				DOI: <a href="{$doiUrl}">{$doiUrl} </a> </p>
-</div>
-			</div>
-			
-
-					<script>
-				  const buttonabnt = document.getElementById("buttonabnt");
-				  const divAbnt = document.getElementById("divAbnt");
-
-				  buttonabnt.addEventListener("click", function() {
+					</style>
+	
+					<div class="referencia abnt">
+							<p>{$author->getLocalizedFamilyName()},
+							{$author->getLocalizedGivenName()|substr:0:1}. 
+							<b>{$publication->getLocalizedFullTitle()|escape}</b>.
+							{$publication->getData('seriesPosition')}.
+							<i>[S. l.]</i> 
+							{$publication->getLocalizedData('copyrightHolder')}, 
+							{$publication->getData('copyrightYear')}.
+							Disponível em <<a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}">
+							https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>>,
+							acesso em DATA, 
+							DOI: <a href="{$doiUrl}">{$doiUrl} </a> </p>
+					</div>
+				</div>
+	
+				<script>
+					const buttonabnt = document.getElementById("buttonabnt");
+					const divAbnt = document.getElementById("divAbnt");
+					buttonabnt.addEventListener("click", function() {
 					if (divAbnt.style.display === "none") {
 						divAbnt.style.display = "block";
 						buttonabnt.innerHTML = "ABNT";
@@ -527,33 +481,34 @@ atualização. [Data de consulta]. Disponibilidade: URL. ISBN
 						buttonabnt.innerHTML = "ABNT";
 					}
 					});
-					</script>
-
-
-			
+				</script>
+		</div>
 			{* APA *}
 
 			<button id="buttonapa">APA</button>
 			<div id="divapa" style="display:none;">
 			  <style>
 				#buttonapa {
-				  background-color: rgb(15, 11, 230);
-				  color: black;
-				  padding: 5px 100px;
-				  border: none;
-				  cursor: pointer;
+				    font-weight: 100;
+  background-color: aqua;
+  border-radius: 15px;
+  border: 0;
+  padding: 5px 85px;
+  cursor: pointer;
 				}
 			  </style>
 
 
 
-		<div class="referencia apa">
+		<div class="referencia apa"><hr>
 		<p>{$author->getLocalizedFamilyName()},
 				{$author->getLocalizedGivenName()|substr:0:1}. 
-				{$publication->getData('copyrightYear')}.
+				({$publication->getData('copyrightYear')}).
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
-				 S.l: {$publication->getLocalizedData('copyrightHolder')}. Recuperado em
-				</p>
+				 <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}. 
+				 Recuperado em DATA, de <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}">
+				 https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>
+				</p><hr>
 </div>
 	</div>
 	
@@ -571,7 +526,7 @@ atualização. [Data de consulta]. Disponibilidade: URL. ISBN
 				buttonapa.innerHTML = "APA";
 			}
 			});
-			</script>
+			</script><br>
 
 {* ISO *}
 
@@ -579,29 +534,31 @@ atualização. [Data de consulta]. Disponibilidade: URL. ISBN
 <div id="diviso" style="display:none;">
   <style>
 	#buttoniso {
-	  background-color: rgb(230, 11, 183);
-	  color: black;
-	  padding: 5px 100px;
-	  border: none;
-	  cursor: pointer;
+	    font-weight: 100;
+  background-color: aqua;
+  border-radius: 15px;
+  border: 0;
+  padding: 5px 85px;
+  cursor: pointer;
 	}
   </style>
 
 
 
 <div class="referencia iso">
-<p>{$author->getLocalizedFamilyName()},
+<p><hr>{$author->getLocalizedFamilyName()},
 				{$author->getLocalizedGivenName()|substr:0:1}. 
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>
 				{$publication->getData('seriesPosition')}.
-				S.l: {$publication->getLocalizedData('copyrightHolder')}, 
+				<i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}.
-				Disponibilidade Url . ISBN
+				Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}">
+				https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> . ISBN
 
 
 
 				
-				</p>
+				<hr></p>
 
 </div>
 </div>
@@ -630,18 +587,31 @@ if (diviso.style.display === "none") {
 <div id="divvancouver" style="display:none;">
   <style>
 	#buttonvancouver {
-	  background-color: rgb(230, 11, 11);
-	  color: black;
-	  padding: 5px 50px;
-	  border: none;
-	  cursor: pointer;
+	    font-weight: 100;
+  background-color: aqua;
+  border-radius: 15px;
+  border: 0;
+  padding: 5px 60px;
+  cursor: pointer;
 	}
   </style>
 
 
 
 <div class="referencia vancouver">
-<p>vancouver </p>
+<p><hr>
+
+{$author->getLocalizedFamilyName()},
+				{$author->getLocalizedGivenName()|substr:0:1}. 
+				{$publication->getLocalizedFullTitle()|escape}.
+				[E-book]. <i>[S. l.]</i>
+				{$publication->getLocalizedData('copyrightHolder')};
+				{$publication->getData('copyrightYear')}.
+				Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}">
+				https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>
+				doi: <a href="{$doiUrl}">{$doiUrl}</a>
+
+<hr></p>
 </div>
 </div>
 

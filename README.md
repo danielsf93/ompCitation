@@ -19,5 +19,7 @@ Falta:<br>
 -Vancouver<br>
 -Regra para mais de um autor<br>
 -Identidade visual<br>
--Talvez dividir o arquivo de layout
+-Talvez dividir o arquivo de layout<br>
+o certo seria usar {$baseUrl}/{$requestedPage}/{$requestedOp}/{$monograph->getBestId()} para obter o link da publicação, porém no meu teste esatava retornando http://0.0.0.0:8888/catalog/book/2 não http://0.0.0.0:8888/index.php/<b>geo</b>/catalog/book/2<br>
+Como solução fiz uma Gambiarra que só funciona para USP: https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}
 
