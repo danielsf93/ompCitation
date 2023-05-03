@@ -31,14 +31,12 @@
                         acesso em DATA, 
                         DOI: <a href="{$doiUrl}">{$doiUrl} </a> </p><hr>
                 </div>
-        </div>
+            </div>
 
-
-                <script>
-            const buttonabnt = document.getElementById("buttonabnt");
-            const divAbnt = document.getElementById("divAbnt");
-
-            buttonabnt.addEventListener("click", function() {
+            <script>
+                const buttonabnt = document.getElementById("buttonabnt");
+                const divAbnt = document.getElementById("divAbnt");
+                buttonabnt.addEventListener("click", function() {
                 if (divAbnt.style.display === "none") {
                     divAbnt.style.display = "block";
                     buttonabnt.innerHTML = "ABNT";
@@ -47,8 +45,7 @@
                     buttonabnt.innerHTML = "ABNT";
                 }
                 });
-                </script>
-
+            </script>
     </div>
 
 {* APA *}
