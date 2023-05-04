@@ -434,8 +434,9 @@
 				<style>
 					#buttonabnt {
 					
-					font-weight: 100;
-					background-color: aqua;
+					font-weight: bold;
+					background-color: #ececec;
+					color: #076fb1;
 					border-radius: 5px;
 					border: 100;
 					padding: 5px 76px;
@@ -464,8 +465,9 @@
 			<div id="divapa" style="display:none;">
 				<style>
 					#buttonapa {
-					font-weight: 100;
-					background-color: aqua;
+					font-weight: bold;
+					background-color: #ececec;
+					color: #076fb1;
 					border-radius: 5px;
 					border: 100;
 					padding: 5px 84px;
@@ -494,8 +496,9 @@
 			<div id="diviso" style="display:none;">
 				<style>
 					#buttoniso {
-					font-weight: 100;
-					background-color: aqua;
+					font-weight: bold;
+					background-color: #ececec;
+					color: #076fb1;
 					border-radius: 5px;
 					border: 100;
 					padding: 5px 85px;
@@ -524,8 +527,9 @@
 			<div id="divvancouver" style="display:none;">
 				<style>
 					#buttonvancouver {
-					font-weight: 100;
-					background-color: aqua;
+					font-weight: bold;
+					background-color: #ececec;
+					color: #076fb1;
 					border-radius: 5px;
 					border: 100;
 					padding: 5px 60px;
