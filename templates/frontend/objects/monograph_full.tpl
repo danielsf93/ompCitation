@@ -445,9 +445,25 @@
 					}
 				</style>
 				<div class="referencia abnt">
-					<p>{$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. <b>{$publication->getLocalizedFullTitle()|escape}</b>. {$publication->getData('seriesPosition')}. <i>[S. l.]</i> {$publication->getLocalizedData('copyrightHolder')}, {$publication->getData('copyrightYear')}. Disponível em <<a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>>, Acesso em {$smarty.now|date_format:"%Y-%m-%d"}. DOI: <a href="{$doiUrl}">{$doiUrl} </a> </p>
-				</div>
-			</div>
+				{if $authors|count == 0}
+					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+				{elseif $authors|count == 2}
+					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}; 
+				{elseif $authors|count > 2}
+					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'} et al.
+				{/if}
+				
+				{$author->getLocalizedFamilyName()}, 
+				{$author->getLocalizedGivenName()|substr:0:1}. 
+				<b>{$publication->getLocalizedFullTitle()|escape}</b>. 
+				{$publication->getData('seriesPosition')}. <i>[S. l.]</i> 
+				{$publication->getLocalizedData('copyrightHolder')}, 
+				{$publication->getData('copyrightYear')}. 
+				Disponível em <<a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>>, 
+				Acesso em {$smarty.now|date_format:"%Y-%m-%d"}. 
+				DOI: <a href="{$doiUrl}">{$doiUrl} </a>
+			</div> </div> 
+			
 			<script>
 				const buttonabnt = document.getElementById("buttonabnt");
 				const divAbnt = document.getElementById("divAbnt");
@@ -506,7 +522,7 @@
 					}
 				</style>
 				<div class="referencia iso">
-					<p>{$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. <b>{$publication->getLocalizedFullTitle()|escape}</b> {$publication->getData('seriesPosition')}. <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}, {$publication->getData('copyrightYear')}. Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> . ISBN </p>
+					<p>{$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. <b>{$publication->getLocalizedFullTitle()|escape}</b> {$publication->getData('seriesPosition')}. <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}, {$publication->getData('copyrightYear')}. Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>, [acesso em {$smarty.now|date_format:"%Y-%m-%d"}] </p>
 				</div>
 			</div>
 			<script>
@@ -537,7 +553,7 @@
 					}
 				</style>
 				<div class="referencia vancouver">
-					<p> {$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. {$publication->getLocalizedFullTitle()|escape}. [E-book]. <i>[S. l.]</i> {$publication->getLocalizedData('copyrightHolder')}; {$publication->getData('copyrightYear')}. Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> doi: <a href="{$doiUrl}">{$doiUrl}</a> </p>
+					<p> {$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. {$publication->getLocalizedFullTitle()|escape}. [E-book]. <i>[S. l.]</i> {$publication->getLocalizedData('copyrightHolder')}; {$publication->getData('copyrightYear')}. Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> doi: <a href="{$doiUrl}">{$doiUrl}</a> [citado {$smarty.now|date_format:"%Y-%m-%d"}]</p>
 				</div>
 			</div>
 			<script>
