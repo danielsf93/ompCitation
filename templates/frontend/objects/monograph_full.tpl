@@ -445,16 +445,15 @@
 					}
 				</style>
 				<div class="referencia abnt">
-				{if $authors|count == 0}
+				{if $authors|count == 1}
 					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
 				{elseif $authors|count == 2}
-					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}; 
+					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}; {$authors[1]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[1]->getLocalizedGivenName()|substr:0:1}.
 				{elseif $authors|count > 2}
-					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'} et al.
+					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1} et al.
 				{/if}
 				
-				{$author->getLocalizedFamilyName()}, 
-				{$author->getLocalizedGivenName()|substr:0:1}. 
+				 
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>. 
 				{$publication->getData('seriesPosition')}. <i>[S. l.]</i> 
 				{$publication->getLocalizedData('copyrightHolder')}, 
