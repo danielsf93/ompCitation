@@ -446,14 +446,13 @@
 				</style>
 				<div class="referencia abnt">
 				{if $authors|count == 1}
-					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
 				{elseif $authors|count == 2}
-					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1}; {$authors[1]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[1]->getLocalizedGivenName()|substr:0:1}.
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()|substr:0:1}.
 				{elseif $authors|count > 2}
-					{$authors[0]->getLocalizedFamilyName()|escape:'htmlall':'UTF-8'}, {$authors[0]->getLocalizedGivenName()|substr:0:1} et al.
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1} et al.
 				{/if}
-				
-				 
+								 
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>. 
 				{$publication->getData('seriesPosition')}. <i>[S. l.]</i> 
 				{$publication->getLocalizedData('copyrightHolder')}, 
@@ -490,7 +489,14 @@
 					}
 				</style>
 				<div class="referencia apa">
-					<p>{$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. ({$publication->getData('copyrightYear')}). <b>{$publication->getLocalizedFullTitle()|escape}</b>. <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}. Recuperado em {$smarty.now|date_format:"%Y-%m-%d"}, de <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> </p>
+				{if $authors|count == 1}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+				{elseif $authors|count == 2}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}, & {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()|substr:0:1}.
+				{elseif $authors|count > 2}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}, {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()|substr:0:1}, & {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()|substr:0:1}
+				{/if} 
+					({$publication->getData('copyrightYear')}). <b>{$publication->getLocalizedFullTitle()|escape}</b>. <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}. Recuperado em {$smarty.now|date_format:"%Y-%m-%d"}, de <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> 
 				</div>
 			</div>
 			<script>
