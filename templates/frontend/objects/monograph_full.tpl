@@ -446,20 +446,22 @@
 				</style>
 				<div class="referencia abnt">
 				{if $authors|count == 1}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()}.
 				{elseif $authors|count == 2}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()|substr:0:1}.
-				{elseif $authors|count > 2}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1} et al.
+					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()|upper}, {$authors[1]->getLocalizedGivenName()}.
+				{elseif $authors|count == 3}
+					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()|upper}, {$authors[1]->getLocalizedGivenName()}; {$authors[2]->getLocalizedFamilyName()|upper}, {$authors[2]->getLocalizedGivenName()}.
+				{elseif $authors|count > 3}
+					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()} et al.
 				{/if}
 								 
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>. 
-				{$publication->getData('seriesPosition')}. <i>[S. l.]</i> 
 				{$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}. 
-				Disponível em <<a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>>, 
-				Acesso em {$smarty.now|date_format:"%Y-%m-%d"}. 
 				DOI: <a href="{$doiUrl}">{$doiUrl} </a>
+				Disponível em: <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> .
+				Acesso em {$smarty.now|date_format:"%Y-%m-%d"}. 
+				
 			</div> </div> 
 			
 			<script>
@@ -490,12 +492,18 @@
 				</style>
 				<div class="referencia apa">
 				{if $authors|count == 1}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}.
 				{elseif $authors|count == 2}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}, & {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()|substr:0:1}.
-				{elseif $authors|count > 2}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}, {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()|substr:0:1}, & {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()|substr:0:1}
-				{/if} 
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}, & {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}.
+				{elseif $authors|count == 3}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}, {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}, & {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()}.
+				{elseif $authors|count == 4}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}, {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()}, & {$authors[3]->getLocalizedFamilyName()}, {$authors[3]->getLocalizedGivenName()}.
+				{elseif $authors|count == 5}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}, {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()}, {$authors[3]->getLocalizedFamilyName()}, {$authors[3]->getLocalizedGivenName()}, & {$authors[4]->getLocalizedFamilyName()}, {$authors[4]->getLocalizedGivenName()}.
+				{elseif $authors|count > 5}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()} et al.
+				{/if}
 					({$publication->getData('copyrightYear')}). <b>{$publication->getLocalizedFullTitle()|escape}</b>. <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}. Recuperado em {$smarty.now|date_format:"%Y-%m-%d"}, de <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> 
 				</div>
 			</div>
