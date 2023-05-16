@@ -455,10 +455,11 @@
 					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()} et al.
 				{/if}
 								 
-				<b>{$publication->getLocalizedFullTitle()|escape}</b>. 
+				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
+				{$publication->getData('seriesPosition')}. 
 				{$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}. 
-				DOI: <a href="{$doiUrl}">{$doiUrl} </a>
+				DOI: <a href="{$doiUrl}">{$doiUrl}</a>
 				Disponível em: <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> .
 				Acesso em {$smarty.now|date_format:"%Y-%m-%d"}. 
 				
@@ -504,7 +505,12 @@
 				{elseif $authors|count > 5}
 					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()} et al.
 				{/if}
-					({$publication->getData('copyrightYear')}). <b>{$publication->getLocalizedFullTitle()|escape}</b>. <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}. Recuperado em {$smarty.now|date_format:"%Y-%m-%d"}, de <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> 
+					({$publication->getData('copyrightYear')}). edicao 
+					<b>{$publication->getLocalizedFullTitle()|escape}</b>. 
+					 {$publication->getLocalizedData('copyrightHolder')}.
+					 DOI: <a href="{$doiUrl}">{$doiUrl}</a>
+					 Disponível em: <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> .
+					 Acesso em: {$smarty.now|date_format:"%Y-%m-%d"},
 				</div>
 			</div>
 			<script>
@@ -535,7 +541,22 @@
 					}
 				</style>
 				<div class="referencia iso">
-					<p>{$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. <b>{$publication->getLocalizedFullTitle()|escape}</b> {$publication->getData('seriesPosition')}. <i>S.l</i>: {$publication->getLocalizedData('copyrightHolder')}, {$publication->getData('copyrightYear')}. Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a>, [acesso em {$smarty.now|date_format:"%Y-%m-%d"}] </p>
+				{if $authors|count == 1}
+					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+				{elseif $authors|count == 2}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()} e {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}.
+				{elseif $authors|count == 3}
+					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()|upper}, {$authors[1]->getLocalizedGivenName()} e {$authors[2]->getLocalizedFamilyName()|upper}, {$authors[2]->getLocalizedGivenName()}.
+				{elseif $authors|count > 3}
+					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()} et al.
+				{/if}
+					<b>{$publication->getLocalizedFullTitle()|escape}</b> 
+					{$publication->getData('seriesPosition')}. 
+					{$publication->getLocalizedData('copyrightHolder')}, 
+					{$publication->getData('copyrightYear')}.
+					DOI: <a href="{$doiUrl}">{$doiUrl}</a>
+					[Acesso em: {$smarty.now|date_format:"%Y-%m-%d"}.]
+					Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> </p>
 				</div>
 			</div>
 			<script>
@@ -566,7 +587,24 @@
 					}
 				</style>
 				<div class="referencia vancouver">
-					<p> {$author->getLocalizedFamilyName()}, {$author->getLocalizedGivenName()|substr:0:1}. {$publication->getLocalizedFullTitle()|escape}. [E-book]. <i>[S. l.]</i> {$publication->getLocalizedData('copyrightHolder')}; {$publication->getData('copyrightYear')}. Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> doi: <a href="{$doiUrl}">{$doiUrl}</a> [citado {$smarty.now|date_format:"%Y-%m-%d"}]</p>
+				{if $authors|count == 1}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()|substr:0:1}.
+				{elseif $authors|count == 2}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}, {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}.
+				{elseif $authors|count == 3}
+					{$authors[0]->getLocalizedFamilyName()} {$authors[0]->getLocalizedGivenName()|substr:0:1}, {$authors[1]->getLocalizedFamilyName()} {$authors[1]->getLocalizedGivenName()|substr:0:1}, {$authors[2]->getLocalizedFamilyName()} {$authors[2]->getLocalizedGivenName()|substr:0:1}.
+				{elseif $authors|count > 3}
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()} et al.
+				{/if}
+
+				 <b>{$publication->getLocalizedFullTitle()|escape}.</b> 
+				 {$publication->getLocalizedData('copyrightHolder')}, 
+				 c{$publication->getData('copyrightYear')}. 
+				 [citado {$smarty.now|date_format:"%Y-%m-%d"}].
+				 DOI: <a href="{$doiUrl}">{$doiUrl}</a> 
+				 Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> 
+				 
+				 </p>
 				</div>
 			</div>
 			<script>

@@ -91,17 +91,17 @@
       DOI: https://doi.org/10.1234/edGeo.3 [Acesso em: 28 out. 2018] Disponível em: https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/3 . Acesso em: 28 out. 2018.
 
 
-    3 Autores:
-
- 
+ 3 Autores:
 
     PRESTES, Bairon; CAMARGO, Carla; GUARÁ e PEREIRA, Laura. Ensaios sobre a agricultura latino-americana. Piracicaba: Universidade de São Paulo. Escola de Agricultura Luiz de Queiroz,  2015. DOI: https://doi.org/10.1234/edGeo.3 [Acesso em: 28 fev. 2016]. Disponível em: https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/3 
 
 
-   4 Autores ou mais:
+4 Autores ou mais:
 
    FONSECA, Henrique Paulo et al. Obras e pavimentação no Estado de São Paulo. v.2. São Paulo: Universidade de São Paulo. Escola Politécnica, 2023. 
    DOI: https://doi.org/10.1234/Geo.4 [Acesso em: 12 maio. 2023.] Disponível em: https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/bookk/4
+
+
 
    Coleções/Séries (deve aparecer logo após o título:
 
@@ -118,25 +118,21 @@
   FORDHAM,  M.  A  criança  como  indivíduo  (M.  ROSAS,  trad.). São Paulo: Universidade de São Paulo. Instituto de Psicologia, 2018. DOI: https://doi.org/10.1234/edGeo.3  
    [Acesso em: 30 nov. 2018.]  Disponível em: https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/24
 
+
 VANCOUVER 
 
 
     1 Autor:
 
- 
-
     Guará, L. Técnica, espaço, tempo. Ribeirão Preto: Universidade de São Paulo. Faculdade de Filosofia, Ciências e Letras de Ribeirão Preto, c2012. [citado 04 de abril 2013]. DOI: https://doi.org/10.1234/edGeo.1 Disponível em https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/1 
 
     2 Autores: 
-
  
    Barbosa, Alexandre, Zanini, Pedro. Jornalismo em gêneros: volume 3: jornalismo na América Latina.  São Paulo: Universidade de São Paulo. Escola de Comunicações e Artes, 
    c2017. [citado 24 de abril 2017] https://doi.org/10.11606/9788572051750 
- 
 
     3 Autores: 
 
- 
    Gilliland G, Tung M, Ladner J. Resíduos de construção e demolição: fundamentos sobre gestão e reciclagem. São Paulo. Escola Politécnica, c2023. [citado em 25 de abril 
     2023]. DOI: https://doi.org/10.11606/9786589190202 Disponível em: https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/workflow/index/991 
 
