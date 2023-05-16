@@ -461,7 +461,8 @@
 				{$publication->getData('copyrightYear')}. 
 				DOI: <a href="{$doiUrl}">{$doiUrl}</a>
 				Disponível em: <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> .
-				Acesso em {$smarty.now|date_format:"%Y-%m-%d"}. 
+				Acesso em {$smarty.now|date_format:"%e %B. %Y"}.
+				
 				
 			</div> </div> 
 			
@@ -510,7 +511,7 @@
 					 {$publication->getLocalizedData('copyrightHolder')}.
 					 DOI: <a href="{$doiUrl}">{$doiUrl}</a>
 					 Disponível em: <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> .
-					 Acesso em: {$smarty.now|date_format:"%Y-%m-%d"},
+					 Acesso em: {$smarty.now|date_format:"%e %B. %Y"},
 				</div>
 			</div>
 			<script>
@@ -555,7 +556,7 @@
 					{$publication->getLocalizedData('copyrightHolder')}, 
 					{$publication->getData('copyrightYear')}.
 					DOI: <a href="{$doiUrl}">{$doiUrl}</a>
-					[Acesso em: {$smarty.now|date_format:"%Y-%m-%d"}.]
+					[Acesso em: {$smarty.now|date_format:"%e %B. %Y"}.]
 					Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> </p>
 				</div>
 			</div>
@@ -600,7 +601,7 @@
 				 <b>{$publication->getLocalizedFullTitle()|escape}.</b> 
 				 {$publication->getLocalizedData('copyrightHolder')}, 
 				 c{$publication->getData('copyrightYear')}. 
-				 [citado {$smarty.now|date_format:"%Y-%m-%d"}].
+				 [citado {$smarty.now|date_format:"%e de %B %Y"}].
 				 DOI: <a href="{$doiUrl}">{$doiUrl}</a> 
 				 Disponível em <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> 
 				 
