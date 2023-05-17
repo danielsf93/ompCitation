@@ -7,11 +7,11 @@
     package="ompcitation"
     directory="ompcitation"
     name="ompcitation"
-    description="ompcitation"
+    description="Este plugin adiciona botões com o formato de citação para livros. Os estilos utilizados são ABNT, APA, ISO e VANCOUVER"
     version="1.0.0"
-    date="2023-01-25"
-    author="STI FFLCH and ABCD USP"
-    email="sti.fflch@usp.br"
+    date="2023-05-17"
+    author="Daniel Silva Ferreira"
+    email="daniel.ferreira@abcd.usp.br"
     url="https://github.com/danielsf93/ompcitation"
   >
   </plugin>

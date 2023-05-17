@@ -1,0 +1,12 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-05-17 02:27+0000\n"
+"Last-Translator: Daniel Silva Ferreira <daniel.ferreira@abcd.usp.br>\n"
+"generic-ompcitation/es_ES/>\n"
+"Language: es_ES\n"
+
+msgid "plugins.generic.ompcitation.description"
+msgstr "Este módulo agrega botones de formato de cita para libros. Los estilos utilizados son ABNT, APA, ISO y VANCOUVER"
+
+msgid "plugins.generic.ompcitation.name"
+msgstr "Estilos de citas de libros bibliográficos para OMP"

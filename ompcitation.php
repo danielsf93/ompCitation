@@ -19,7 +19,7 @@ class ompcitation extends GenericPlugin {
    * enable and disable plugins.
    */
 	public function getDisplayName() {
-		return __('ompcitation');
+		return __('plugins.generic.ompcitation.name');
 	}
 
 	/**
@@ -29,7 +29,7 @@ class ompcitation extends GenericPlugin {
    * enable and disable plugins.
    */
 	public function getDescription() {
-		return __('ompcitation');
+		return __('plugins.generic.ompcitation.description');
 	}
 	
 	/**
