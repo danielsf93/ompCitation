@@ -456,7 +456,7 @@
 				{/if}
 								 
 				<b>{$publication->getLocalizedFullTitle()|escape}</b>.
-				{$publication->getData('seriesPosition')}. 
+				{$publication->getData('seriesPosition')} {if $series}({$series->getLocalizedFullTitle()}){/if}. 
 				{$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}. 
 				DOI: <a href="{$doiUrl}">{$doiUrl}</a>
@@ -500,18 +500,19 @@
 				{elseif $authors|count == 3}
 					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}, {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}, & {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()}.
 				{elseif $authors|count == 4}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}, {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()}, & {$authors[3]->getLocalizedFamilyName()}, {$authors[3]->getLocalizedGivenName()}.
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}; {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()} & {$authors[3]->getLocalizedFamilyName()}, {$authors[3]->getLocalizedGivenName()}.
 				{elseif $authors|count == 5}
-					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}, {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()}, {$authors[3]->getLocalizedFamilyName()}, {$authors[3]->getLocalizedGivenName()}, & {$authors[4]->getLocalizedFamilyName()}, {$authors[4]->getLocalizedGivenName()}.
+					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()}; {$authors[1]->getLocalizedFamilyName()}, {$authors[1]->getLocalizedGivenName()}; {$authors[2]->getLocalizedFamilyName()}, {$authors[2]->getLocalizedGivenName()}; {$authors[3]->getLocalizedFamilyName()}, {$authors[3]->getLocalizedGivenName()} & {$authors[4]->getLocalizedFamilyName()}, {$authors[4]->getLocalizedGivenName()}.
 				{elseif $authors|count > 5}
 					{$authors[0]->getLocalizedFamilyName()}, {$authors[0]->getLocalizedGivenName()} et al.
 				{/if}
-					({$publication->getData('copyrightYear')}). edicao 
+					({$publication->getData('copyrightYear')}). 
 					<b>{$publication->getLocalizedFullTitle()|escape}</b>. 
+					 {$publication->getData('seriesPosition')}.
 					 {$publication->getLocalizedData('copyrightHolder')}.
 					 DOI: <a href="{$doiUrl}">{$doiUrl}</a>
 					 Disponível em: <a href="https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}"> https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}</a> .
-					 Acesso em: {$smarty.now|date_format:"%e %B. %Y"},
+					 Acesso em: {$smarty.now|date_format:"%e %b. %Y"}.
 				</div>
 			</div>
 			<script>
@@ -552,7 +553,7 @@
 					{$authors[0]->getLocalizedFamilyName()|upper}, {$authors[0]->getLocalizedGivenName()} et al.
 				{/if}
 					<b>{$publication->getLocalizedFullTitle()|escape}</b> 
-					{$publication->getData('seriesPosition')}. 
+					{$publication->getData('seriesPosition')} {if $series}({$series->getLocalizedFullTitle()}){/if}.
 					{$publication->getLocalizedData('copyrightHolder')}, 
 					{$publication->getData('copyrightYear')}.
 					DOI: <a href="{$doiUrl}">{$doiUrl}</a>
