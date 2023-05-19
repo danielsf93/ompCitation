@@ -104,7 +104,7 @@ VANCOUVER: "Garcia, Willim et al.  Novas terras, diferentes flores. São Paulo: 
 
 
 4) Aguardar confirmação da bibliotecária quanto aos formatos feitos até aqui.<br>
--Alinhar o código<br>
+
 
 5)(mas não essencial)O certo seria usar {$baseUrl}/{$requestedPage}/{$requestedOp}/{$monograph->getBestId()} para obter o link da publicação, porém no meu teste esatava retornando http://0.0.0.0:8888/catalog/book/2 não http://0.0.0.0:8888/<b>index.php/geo</b>/catalog/book/2<br>
 Como solução fiz uma Gambiarra que só funciona para USP: https://www.livrosabertos.sibi.usp.br/portaldelivrosUSP/catalog/book/{$monograph->getBestId()}
