@@ -19,3 +19,6 @@ msgstr "Available at: "
 
 msgid "plugins.generic.ompcitation.date"
 msgstr "Access on "
+
+msgid "plugins.generic.ompcitation.vanc"
+msgstr "cited "
