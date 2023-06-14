@@ -104,5 +104,3 @@ VANCOUVER: "Garcia, Willim et al.  Novas terras, diferentes flores. São Paulo: 
 
 
 4) Aguardar confirmação da bibliotecária quanto aos formatos feitos até aqui.<br>
-
-

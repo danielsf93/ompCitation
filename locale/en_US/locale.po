@@ -10,3 +10,12 @@ msgstr "This plugin adds citation format buttons for books. The styles used are 
 
 msgid "plugins.generic.ompcitation.name"
 msgstr "Bibliographic Book Citation Styles for OMP"
+
+msgid "plugins.generic.ompcitation.howto"
+msgstr "HOW TO CITE"
+
+msgid "plugins.generic.ompcitation.link"
+msgstr "Available at: "
+
+msgid "plugins.generic.ompcitation.date"
+msgstr "Access on "

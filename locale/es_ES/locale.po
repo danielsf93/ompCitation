@@ -10,3 +10,12 @@ msgstr "Este módulo agrega botones de formato de cita para libros. Los estilos 
 
 msgid "plugins.generic.ompcitation.name"
 msgstr "Estilos de citas de libros bibliográficos para OMP"
+
+msgid "plugins.generic.ompcitation.howto"
+msgstr "CÓMO COTIZAR"
+
+msgid "plugins.generic.ompcitation.link"
+msgstr "Disponible en: "
+
+msgid "plugins.generic.ompcitation.date"
+msgstr "Acceso el "

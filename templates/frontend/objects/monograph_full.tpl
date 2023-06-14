@@ -17,10 +17,7 @@
 	<h1 class="title">
 		{$publication->getLocalizedFullTitle()|escape}
 	</h1>
-	
-	
- 
-	
+
 	<div class="row">
 		<div class="main_entry">
 
@@ -43,6 +40,8 @@
 					{foreach from=$authors item=author}
 						<div class="sub_item">
 							<div class="label">
+
+							
 								{if $identifyAsEditors}
 									{translate key="submission.editorName" editorName=$author->getFullName()|escape}
 								{else}
@@ -70,7 +69,7 @@
 						{* strip removes excess white-space which creates gaps between separators *}
 						{strip}
 							{if $author->getLocalizedAffiliation()}
-								{if $identifyAsEditors}
+								ola{if $identifyAsEditors}
 									{capture assign="authorName"}<span class="label">{translate key="submission.editorName" editorName=$author->getFullName()|escape}</span>{/capture}
 								{else}
 									{capture assign="authorName"}<span class="label">{$author->getFullName()|escape}</span>{/capture}
@@ -429,7 +428,7 @@
 
 
 
-				<div class="item citation"> <b>COMO CITAR</b><br> {* ABNT *} <div class="sub_item abnt"> <button id="buttonabnt">ABNT</button>
+				<div class="item citation"> <b>{translate key="plugins.generic.ompcitation.howto"}</b><br> {* ABNT *} <div class="sub_item abnt"> <button id="buttonabnt">ABNT</button>
 				<div id="divAbnt" style="display:none;">
 				<style>
 					#buttonabnt {
@@ -460,8 +459,8 @@
 				{$publication->getLocalizedData('copyrightHolder')}, 
 				{$publication->getData('copyrightYear')}. 
 				DOI: <a href="{$doiUrl}">{$doiUrl}</a>
-				Disponível em: <a href="{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"> {$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}</a> .
-				Acesso em {$smarty.now|date_format:"%e %B. %Y"}.
+				{translate key="plugins.generic.ompcitation.link"}<a href="{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}"> {$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}</a> .
+				{translate key="plugins.generic.ompcitation.date"}{$smarty.now|date_format:"%e %B. %Y"}.
 				
 				
 			</div> </div> 
