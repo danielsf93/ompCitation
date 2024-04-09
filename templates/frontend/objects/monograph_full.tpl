@@ -687,7 +687,10 @@
 {/if}
 
 
-    {assign var="doisQuatroCinco" value="10a{$publication->getLocalizedFullTitle()|escape}h[recurso eletrônico]  "}
+{assign var="submissionTitle" value=$publication->getLocalizedFullTitle()}
+{assign var="submissionTitleEscaped" value=$submissionTitle|escape:'ENT_QUOTES'}
+{assign var="submissionTitleDecoded" value=$submissionTitleEscaped|html_entity_decode}
+{assign var="doisQuatroCinco" value="10a{$submissionTitleDecoded}h[recurso eletrônico]  "}
 
 
 
