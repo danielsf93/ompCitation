@@ -69,7 +69,7 @@
 						{* strip removes excess white-space which creates gaps between separators *}
 						{strip}
 							{if $author->getLocalizedAffiliation()}
-								ola{if $identifyAsEditors}
+								{if $identifyAsEditors}
 									{capture assign="authorName"}<span class="label">{translate key="submission.editorName" editorName=$author->getFullName()|escape}</span>{/capture}
 								{else}
 									{capture assign="authorName"}<span class="label">{$author->getFullName()|escape}</span>{/capture}
