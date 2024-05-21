@@ -806,7 +806,7 @@
 {assign var="quatroNoveZero" value=$quatroNoveZero|cat:"  "}
 
 
-    {assign var="cincoZeroZero" value="aDisponível em: http://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}. Acesso em: {$smarty.now|date_format:"%d.%m.%Y"}"}
+    {assign var="cincoZeroZero" value="aDisponível em: https://{$smarty.server.HTTP_HOST}{$smarty.server.REQUEST_URI}. Acesso em: {$smarty.now|date_format:"%d.%m.%Y"}"}
 
 {* Demais autores *}
 {assign var="additionalAuthors" value=[]}
@@ -837,7 +837,7 @@
     {assign var="additionalAuthorsExport" value="$additionalAuthorsExport$authorExportString"} 
 {/foreach}
    
-    {assign var="oitoCincoMeiaA" value="4 zClicar sobre o botão para acesso ao texto completouhttps://doi.org/{$publication->getStoredPubId('doi')|escape}3DOI"}
+    {assign var="oitoCincoMeiaA" value="4 z\"Clicar\" sobre o botão para acesso ao texto completouhttps://doi.org/{$publication->getStoredPubId('doi')|escape}3DOI"}
 
 {foreach from=$publicationFormats item=format}
     {assign var=publicationFormatId value=$format->getId()}
@@ -849,7 +849,7 @@
             {else}
                 {capture assign=downloadUrl}{url op="view" path=$monograph->getBestId()|to_array:"version":$publication->getId():$publicationFormatId:$file->getBestId()}{/capture}
             {/if}
-     {assign var="oitoCincoMeiaB" value="41zClicar sobre o botão para acesso ao texto completou{$downloadUrl}3Portal de Livros Abertos da USP  "}
+     {assign var="oitoCincoMeiaB" value="41z\"Clicar\" sobre o botão para acesso ao texto completou{$downloadUrl}3Portal de Livros Abertos da USP  "}
     {/if}
 {/foreach}
 
@@ -964,7 +964,7 @@
 {assign var="rec945CAR" value=sprintf('%04d', strlen($noveQuatroCinco) + 1)}
 {assign var="rec945" value="945"|cat:$rec945CAR|cat:$rec945POS - 3}
  
-    <button id="downloadButton" class="botao">Baixar Arquivo MARC</button>
+    <button id="downloadButton" class="botao">Baixar Registro MARC</button>
 	
 
 <style>
